@@ -1,0 +1,59 @@
+#navigation {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 87px;
+  height: 91px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+#logo {
+  width: 178px;
+  margin-left: 28px;
+  margin-top: 18px;
+  margin-bottom: 12.07px;
+}
+
+#aside {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 117px;
+  height: 316px;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+
+#aside-principal {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 117px;
+  height: 689px;
+  justify-content: space-between;
+}
+
+#titre h2 {
+  color: white;
+  transform: rotate(-90deg);
+  font-size: 12px;
+  width: 145px;
+}
+
+#titre {
+  height: 150px;
+}
+
+#asideUser {
+  display: flex;
+  flex-direction: row;
+}
