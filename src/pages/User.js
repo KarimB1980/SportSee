@@ -1,12 +1,15 @@
-import React from 'react';
+import React from 'react'
+//import Datas from '../_mocks/Fetch'
+//import { Link } from "react-router-dom"
+import Nav from '../components/Nav'
 import '../components/Nav.css'
-import Nav from '../components/Nav';
 import './User.css'
 
-// Création de la page d'accueil
-export default function User() {
-  return (
-    <div className="App">
+// Affichage des cartes des logements
+export default function AffichageDonneesJSON(){
+
+  return(
+    <div className='utilisateurs'>
       <Nav/>
     </div>
   )

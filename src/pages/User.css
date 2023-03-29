@@ -1,0 +1,156 @@
+.utilisateur a {
+color: black;
+}
+
+.composants {
+  margin: 20px;
+}
+
+#objectifs {
+width: 258px;
+height: 200px;
+/*height: 100%;*/
+background-color: red;
+border-radius: 5px;
+}
+
+.text-heading {
+color: white;
+font-size: 15px;
+opacity: 0.5;
+padding-top: 29px;
+margin-left: 34px;
+margin-top: 0;
+margin-bottom: 0;
+}
+
+h2 span {
+display: block;
+}
+
+.recharts-responsive-container {
+background-color: red;
+border-radius: 5px;
+}
+
+/*.recharts-cartesian-axis-ticks {
+margin-left: 20px;
+margin-right: 20px;
+}*/
+
+line {
+opacity: 0;
+}
+
+.recharts-tooltip-item-value {
+color: black;
+}
+
+.recharts-tooltip-label {
+display: none;
+}
+
+.recharts-tooltip-item-separator {
+display: none;
+}
+
+.recharts-tooltip-item-name {
+display: none;
+}
+
+.recharts-tooltip-wrapper {
+border-radius: 0;
+border: 0;
+border-color: white;
+}
+
+.recharts-default-tooltip {
+border: 0;
+}
+
+.recharts-tooltip-cursor {
+display: none;
+opacity: 0;
+}
+
+#radar {
+width: 258px;
+height: 263px;
+/*height: 100%;*/
+background-color: black;
+border-radius: 5px;
+}
+
+#radar .recharts-responsive-container {
+width: 258px;
+height: 263px;
+/*height: 100%;*/
+background-color: black;
+border-radius: 5px;
+}
+
+.composants {
+display: flex;
+flex-direction: row;
+}
+
+.recharts-text {
+fill: white;
+font-size: 12px;
+}
+
+.recharts-layer {
+display: flex;
+flex-direction: row;
+
+}
+
+#kpi {
+position: relative;
+width: 258px;
+height: 263px;
+/*height: 100%;*/
+background-color: #FBFBFB;
+border-radius: 5px;
+}
+
+#kpi .recharts-responsive-container {
+position: absolute;
+width: 258px;
+height: 263px;
+/*height: 100%;*/
+background-color: #FBFBFB;
+border-radius: 5px;
+}
+
+.contenairKPI {
+position: absolute;
+z-index: 1;
+}
+
+.contenairKPI h2 {
+font-size: 15px;
+margin-left: 30px;
+margin-top: 24px;
+}
+
+.score {
+position: absolute;
+top: 100px;
+left: 100px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.score h2 {
+font-size: 26px;
+color: #282D30;
+margin: 0;
+}
+
+.score h3 {
+font-size: 16px;
+color: #74798C;
+margin: 0;
+}

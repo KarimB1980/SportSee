@@ -6,7 +6,10 @@ import icon3 from '../assets/icones/icon3.png'
 import icon4 from '../assets/icones/icon4.png'
 import logo from '../assets/logo/Logo.png'
 
-import Datas from '../fetch/Fetch'
+import Datas from '../_mocks/Fetch'
+import Objectifs from './Objectifs'
+import RadarDashboard from './Radar'
+import KPI from './KPI'
 
 // Création de l'en-tête
 export default function Nav() {
@@ -35,8 +38,19 @@ export default function Nav() {
             </h2>
           </div>
         </aside>
-        <div className='User'>
-          <Datas/>
+        <div className='composants'>
+          <div className='nameUser'>
+            <Datas/>
+          </div>
+          <div id='objectifs'>
+            <Objectifs/>
+          </div>
+          <div id='radar'>
+            <RadarDashboard/>
+          </div>
+          <div id='kpi'>
+            <KPI/>
+          </div>
         </div>
       </div>
     </nav>
