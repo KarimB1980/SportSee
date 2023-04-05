@@ -1,10 +1,20 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import Datas from "../Axios/AxiosId";
 
-const data = [
+/*const data = [
   { todayScore: 0.12 }
-]
+]*/
 
 export default function KPI() {
+
+  const data = Object.assign({}, Datas());
+  //console.log(data['todayScore']);
+  let todayScore = data['todayScore'];
+  //console.log(todayScore);
+  let tableau = [];
+  tableau = [{todayScore}];
+  //console.log(tableau);
+
   return (
     <>
       <div className="contenairKPI">
@@ -13,13 +23,13 @@ export default function KPI() {
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={160} height={160}>
           <Pie
-            data={data}
+            data={tableau}
             dataKey="todayScore"
             innerRadius={70}
             outerRadius={80}
             startAngle={0}
-            endAngle={data[0].todayScore*360}
-          >  
+            endAngle={tableau[0].todayScore*360}
+          >
             <Cell
               key={'arc'}
               fill={'#FF0000'}
@@ -31,7 +41,7 @@ export default function KPI() {
 
       <div className="score">
         <h2>
-          {data[0].todayScore*100}%<br />
+          {data['todayScore']*100}%<br />
         </h2>
         <h3>
           de votre<br />

@@ -3,7 +3,13 @@ color: black;
 }
 
 .composants {
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 109px;
+  margin-top: 50px;
+  /*margin: 20px;*/
+  width: 835px;
+  justify-content: space-between;
 }
 
 #objectifs {
@@ -33,42 +39,37 @@ background-color: red;
 border-radius: 5px;
 }
 
-/*.recharts-cartesian-axis-ticks {
-margin-left: 20px;
-margin-right: 20px;
-}*/
-
-line {
+#objectifs line {
 opacity: 0;
 }
 
-.recharts-tooltip-item-value {
+#objectifs .recharts-tooltip-item-value {
 color: black;
 }
 
-.recharts-tooltip-label {
+#objectifs .recharts-tooltip-label {
 display: none;
 }
 
-.recharts-tooltip-item-separator {
+#objectifs .recharts-tooltip-item-separator {
 display: none;
 }
 
-.recharts-tooltip-item-name {
+#objectifs .recharts-tooltip-item-name {
 display: none;
 }
 
-.recharts-tooltip-wrapper {
+#objectifs .recharts-tooltip-wrapper {
 border-radius: 0;
 border: 0;
 border-color: white;
 }
 
-.recharts-default-tooltip {
+#objectifs .recharts-default-tooltip {
 border: 0;
 }
 
-.recharts-tooltip-cursor {
+#objectifs .recharts-tooltip-cursor {
 display: none;
 opacity: 0;
 }
@@ -89,27 +90,15 @@ background-color: black;
 border-radius: 5px;
 }
 
-.composants {
-display: flex;
-flex-direction: row;
-}
-
-.recharts-text {
+#radar .recharts-text {
 fill: white;
 font-size: 12px;
-}
-
-.recharts-layer {
-display: flex;
-flex-direction: row;
-
 }
 
 #kpi {
 position: relative;
 width: 258px;
 height: 263px;
-/*height: 100%;*/
 background-color: #FBFBFB;
 border-radius: 5px;
 }
@@ -118,7 +107,6 @@ border-radius: 5px;
 position: absolute;
 width: 258px;
 height: 263px;
-/*height: 100%;*/
 background-color: #FBFBFB;
 border-radius: 5px;
 }
@@ -153,4 +141,53 @@ margin: 0;
 font-size: 16px;
 color: #74798C;
 margin: 0;
+}
+
+#poids {
+  /*position: relative;*/
+  width: 835px;
+  height: 270px;
+  background-color: #FBFBFB;
+  margin-left: 109px;
+}
+
+#poids .recharts-responsive-container {
+  /*width: 258px;
+  height: 200px;*/
+  /*height: 100%;*/
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}
+
+#poids .recharts-text {
+  fill: black;
+  font-size: 12px;
+}
+
+#poids .recharts-layer .recharts-bar-rectangle {
+  border-radius: 5px;
+}
+
+#poids .title-heading {
+  /*position: absolute;*/
+  font-size: 15px;
+  margin-left: 20px;
+}
+/*
+#poids .recharts-responsive-container {
+  background-color: #FBFBFB;
+}*/
+
+#poids .recharts-legend-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+#poids .yAxis .recharts-cartesian-axis-line {
+  display: none;
+}
+
+#poids .recharts-cartesian-axis-tick-line {
+  display: none;
 }
