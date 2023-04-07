@@ -30,6 +30,7 @@ a {
   color: white;
   transform: rotate(-90deg);
   font-size: 12px;
+  font-weight: 500;
   width: 145px;
 }
 
