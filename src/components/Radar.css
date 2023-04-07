@@ -1,0 +1,19 @@
+#radar .recharts-responsive-container {
+  width: 258px;
+  height: 263px;
+  background-color: black;
+  border-radius: 5px;
+}
+    
+#radar .recharts-text {
+  fill: white;
+  font-size: 12px;
+}
+
+#radar .recharts-polar-grid-angle line {
+  display: none;    
+}
+
+.recharts-polar-angle-axis-tick-value {
+  margin-top: 10px;
+}

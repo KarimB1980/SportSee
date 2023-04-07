@@ -1,19 +1,12 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import Datas from "../Axios/AxiosId";
-
-/*const data = [
-  { todayScore: 0.12 }
-]*/
+import './KPI.css'
 
 export default function KPI() {
-
   const data = Object.assign({}, Datas());
-  //console.log(data['todayScore']);
   let todayScore = data['todayScore'];
-  //console.log(todayScore);
   let tableau = [];
   tableau = [{todayScore}];
-  //console.log(tableau);
 
   return (
     <>

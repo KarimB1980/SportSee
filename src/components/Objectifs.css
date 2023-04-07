@@ -1,0 +1,42 @@
+.messageObjectifs h2 {
+  margin-left: 109px;
+  margin-bottom: 77px;
+  margin-top: 41px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#objectifs line {
+  opacity: 0;
+}
+
+#objectifs .recharts-tooltip-item-value {
+  color: black;
+}
+
+#objectifs .recharts-tooltip-label {
+  display: none;
+}
+
+#objectifs .recharts-tooltip-item-separator {
+  display: none;
+}
+
+#objectifs .recharts-tooltip-item-name {
+  display: none;
+}
+
+#objectifs .recharts-tooltip-wrapper {
+  border-radius: 0;
+  border: 0;
+  border-color: white;
+}
+
+#objectifs .recharts-default-tooltip {
+  border: 0;
+}
+
+#objectifs .recharts-tooltip-cursor {
+  display: none;
+  opacity: 0;
+}    

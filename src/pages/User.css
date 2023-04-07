@@ -1,5 +1,5 @@
 .utilisateur a {
-color: black;
+  color: black;
 }
 
 .composants {
@@ -7,187 +7,62 @@ color: black;
   flex-direction: row;
   margin-left: 109px;
   margin-top: 50px;
-  /*margin: 20px;*/
   width: 835px;
   justify-content: space-between;
 }
 
-#objectifs {
-width: 258px;
-height: 200px;
-/*height: 100%;*/
-background-color: red;
-border-radius: 5px;
-}
-
-.text-heading {
-color: white;
-font-size: 15px;
-opacity: 0.5;
-padding-top: 29px;
-margin-left: 34px;
-margin-top: 0;
-margin-bottom: 0;
-}
-
-h2 span {
-display: block;
-}
-
-.recharts-responsive-container {
-background-color: red;
-border-radius: 5px;
-}
-
-#objectifs line {
-opacity: 0;
-}
-
-#objectifs .recharts-tooltip-item-value {
-color: black;
-}
-
-#objectifs .recharts-tooltip-label {
-display: none;
-}
-
-#objectifs .recharts-tooltip-item-separator {
-display: none;
-}
-
-#objectifs .recharts-tooltip-item-name {
-display: none;
-}
-
-#objectifs .recharts-tooltip-wrapper {
-border-radius: 0;
-border: 0;
-border-color: white;
-}
-
-#objectifs .recharts-default-tooltip {
-border: 0;
-}
-
-#objectifs .recharts-tooltip-cursor {
-display: none;
-opacity: 0;
-}
-
-#radar {
-width: 258px;
-height: 263px;
-/*height: 100%;*/
-background-color: black;
-border-radius: 5px;
-}
-
-#radar .recharts-responsive-container {
-width: 258px;
-height: 263px;
-/*height: 100%;*/
-background-color: black;
-border-radius: 5px;
-}
-
-#radar .recharts-text {
-fill: white;
-font-size: 12px;
-}
-
-#kpi {
-position: relative;
-width: 258px;
-height: 263px;
-background-color: #FBFBFB;
-border-radius: 5px;
-}
-
-#kpi .recharts-responsive-container {
-position: absolute;
-width: 258px;
-height: 263px;
-background-color: #FBFBFB;
-border-radius: 5px;
-}
-
-.contenairKPI {
-position: absolute;
-z-index: 1;
-}
-
-.contenairKPI h2 {
-font-size: 15px;
-margin-left: 30px;
-margin-top: 24px;
-}
-
-.score {
-position: absolute;
-top: 100px;
-left: 100px;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.score h2 {
-font-size: 26px;
-color: #282D30;
-margin: 0;
-}
-
-.score h3 {
-font-size: 16px;
-color: #74798C;
-margin: 0;
-}
-
 #poids {
-  /*position: relative;*/
   width: 835px;
   height: 270px;
   background-color: #FBFBFB;
   margin-left: 109px;
 }
 
-#poids .recharts-responsive-container {
-  /*width: 258px;
-  height: 200px;*/
-  /*height: 100%;*/
+#objectifs {
+  width: 258px;
+  height: 200px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+#radar {
+  width: 258px;
+  height: 263px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  height: 595.44px;
+  justify-content: space-between;
+  margin-left: 31px;
+}
+
+#kpi {
+  position: relative;
+  width: 258px;
+  height: 263px;
   background-color: #FBFBFB;
   border-radius: 5px;
 }
 
-#poids .recharts-text {
-  fill: black;
-  font-size: 12px;
-}
-
-#poids .recharts-layer .recharts-bar-rectangle {
-  border-radius: 5px;
-}
-
-#poids .title-heading {
-  /*position: absolute;*/
+.text-heading {
+  color: white;
   font-size: 15px;
-  margin-left: 20px;
-}
-/*
-#poids .recharts-responsive-container {
-  background-color: #FBFBFB;
-}*/
-
-#poids .recharts-legend-icon {
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
+  opacity: 0.5;
+  padding-top: 29px;
+  margin-left: 34px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-#poids .yAxis .recharts-cartesian-axis-line {
-  display: none;
+h2 span {
+  display: block;
 }
 
-#poids .recharts-cartesian-axis-tick-line {
-  display: none;
+.recharts-responsive-container {
+  background-color: red;
+  border-radius: 5px;
 }

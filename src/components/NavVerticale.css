@@ -1,0 +1,30 @@
+#aside {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 117px;
+  height: 316px;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+
+#aside-principal {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 117px;
+  height: 689px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1439px) {
+  #aside-principal {
+    height: 933px;
+  }
+
+  #aside {
+    margin-top: 256px;
+  }
+}

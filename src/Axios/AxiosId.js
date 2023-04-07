@@ -5,8 +5,6 @@ import { useParams } from 'react-router-dom'
 export default function Datas() {
   // Récupération de l'ID de l'utilisateur
   const { userid } = useParams()
-  console.log(userid)
-
   const baseURL = `http://localhost:3000/user/${userid}`;
 
   const [post, setPost] = React.useState(null);
@@ -14,12 +12,11 @@ export default function Datas() {
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setPost(response.data);
-      //console.log(response.data)
     });
+  // eslint-disable-next-line
   }, []);
 
   if (!post) return null;
-  //console.log(post);
 
   let id = post.data.id
   let firstName = post.data.userInfos.firstName
@@ -42,8 +39,6 @@ export default function Datas() {
   tableau["proteinCount"] = proteinCount;
   tableau["carbohydrateCount"] = carbohydrateCount;
   tableau["lipidCount"] = lipidCount;
-
-  //console.log(tableau);
 
   return (
     tableau

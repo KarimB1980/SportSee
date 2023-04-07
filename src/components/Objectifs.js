@@ -1,38 +1,28 @@
-import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
+import React from 'react';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import DatasAverageSessions from '../Axios/AxiosAverageSessions';
+import './Objectifs.css'
 
-const data = [
-  {
-      day: 'L',
-      sessionLength: 30
-  },
-  {
-      day: 'M',
-      sessionLength: 23
-  },
-  {
-      day: 'M',
-      sessionLength: 45
-  },
-  {
-      day: 'J',
-      sessionLength: 50
-  },
-  {
-      day: 'V',
-      sessionLength: 0
-  },
-  {
-      day: 'S',
-      sessionLength: 0
-  },
-  {
-      day: 'D',
-      sessionLength: 60
-  }
-]
+export default function Objectifs() {
+  const dataAverageSessions = Object.assign({}, DatasAverageSessions());
+  const dataAverageSessions1 = Object.assign({}, dataAverageSessions[0]);
+  const dataAverageSessions2 = Object.assign({}, dataAverageSessions[1]);
+  const dataAverageSessions3 = Object.assign({}, dataAverageSessions[2]);
+  const dataAverageSessions4 = Object.assign({}, dataAverageSessions[3]);
+  const dataAverageSessions5 = Object.assign({}, dataAverageSessions[4]);
+  const dataAverageSessions6 = Object.assign({}, dataAverageSessions[5]);
+  const dataAverageSessions7 = Object.assign({}, dataAverageSessions[6]);
 
-export default function Objectifs() { 
+  let objet1 = {day:'L', sessionLength:dataAverageSessions1['sessionLength']};
+  let objet2 = {day:'M', sessionLength:dataAverageSessions2['sessionLength']};
+  let objet3 = {day:'M', sessionLength:dataAverageSessions3['sessionLength']};
+  let objet4 = {day:'J', sessionLength:dataAverageSessions4['sessionLength']};
+  let objet5 = {day:'V', sessionLength:dataAverageSessions5['sessionLength']};
+  let objet6 = {day:'S', sessionLength:dataAverageSessions6['sessionLength']};
+  let objet7 = {day:'D', sessionLength:dataAverageSessions7['sessionLength']};
+
+  const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];
+
   return (
     <>
       <h2 className="text-heading">

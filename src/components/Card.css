@@ -31,3 +31,8 @@
   height: 124px;
   align-items: center;
 }
+
+.poidsComposantsCards {
+  display: flex;
+  flex-direction: row;
+}

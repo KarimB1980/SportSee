@@ -1,52 +1,10 @@
-import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import DatasActivity from '../Axios/AxiosActivity'
-
-/*const data = [
-    {
-        day: '2020-07-01',
-        kilogram: 80,
-        calories: 240
-    },
-    {
-        day: '2020-07-02',
-        kilogram: 80,
-        calories: 220
-    },
-    {
-        day: '2020-07-03',
-        kilogram: 81,
-        calories: 280
-    },
-    {
-        day: '2020-07-04',
-        kilogram: 81,
-        calories: 290
-    },
-    {
-        day: '2020-07-05',
-        kilogram: 80,
-        calories: 160
-    },
-    {
-        day: '2020-07-06',
-        kilogram: 78,
-        calories: 162
-    },
-    {
-        day: '2020-07-07',
-        kilogram: 76,
-        calories: 390
-    }
-]*/
-
+import './Poids.css'
 
 export default function Poids() {
-
-  console.log(DatasActivity());
-
   const dataActivity = Object.assign({}, DatasActivity());
-  console.log(dataActivity);
   const dataActivity1 = Object.assign({}, dataActivity[0]);
   const dataActivity2 = Object.assign({}, dataActivity[1]);
   const dataActivity3 = Object.assign({}, dataActivity[2]);
@@ -64,7 +22,6 @@ export default function Poids() {
   let objet7 = {day:dataActivity7['day'], kilogram:dataActivity7['kilogram'],calories:dataActivity7['calorie']};
 
   const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];
-  console.log(data);
 
   return (
     <>

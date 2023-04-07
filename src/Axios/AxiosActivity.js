@@ -5,8 +5,6 @@ import { useParams } from 'react-router-dom'
 export default function DatasActivity() {
   // Récupération de l'ID de l'utilisateur
   const { userid } = useParams()
-  console.log(userid)
-
   const baseURL = `http://localhost:3000/user/${userid}/activity`;
 
   const [post, setPost] = React.useState(null);
@@ -14,12 +12,11 @@ export default function DatasActivity() {
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setPost(response.data);
-      //console.log(response.data)
     });
+  // eslint-disable-next-line
   }, []);
 
   if (!post) return null;
-  //console.log(post);
 
   let day1 = post.data.sessions[0].day
   let kilogram1 = post.data.sessions[0].kilogram
@@ -87,8 +84,6 @@ export default function DatasActivity() {
   tableau7["kilogram"] = kilogram7;
   tableau7["calorie"] = calories7;
   
-  console.log(tableau);
-
   return (
     tableau
   );
