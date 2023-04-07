@@ -13,6 +13,7 @@ export default function KPI() {
       <div className="contenairKPI">
         <h2>Score</h2>
       </div>
+      <div className="disc"></div>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={160} height={160}>
           <Pie
@@ -20,8 +21,8 @@ export default function KPI() {
             dataKey="todayScore"
             innerRadius={70}
             outerRadius={80}
-            startAngle={0}
-            endAngle={tableau[0].todayScore*360}
+            startAngle={90}
+            endAngle={tableau[0].todayScore*360+90}
           >
             <Cell
               key={'arc'}

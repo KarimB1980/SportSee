@@ -30,6 +30,7 @@
   width: 258px;
   height: 124px;
   align-items: center;
+  border-radius: 5px;
 }
 
 .poidsComposantsCards {

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   margin-left: 109px;
-  margin-top: 50px;
+  margin-top: 80px;
   width: 835px;
   justify-content: space-between;
 }
@@ -16,6 +16,7 @@
   height: 270px;
   background-color: #FBFBFB;
   margin-left: 109px;
+  border-radius: 5px;
 }
 
 #objectifs {
@@ -35,7 +36,7 @@
 #cards {
   display: flex;
   flex-direction: column;
-  height: 595.44px;
+  /*height: 615px;*/
   justify-content: space-between;
   margin-left: 31px;
 }

@@ -15,16 +15,6 @@
   flex-direction: column;
   align-items: center;
   width: 117px;
-  height: 689px;
+  height: 933px;
   justify-content: space-between;
-}
-
-@media screen and (min-width: 1439px) {
-  #aside-principal {
-    height: 933px;
-  }
-
-  #aside {
-    margin-top: 256px;
-  }
 }

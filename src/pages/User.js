@@ -3,6 +3,7 @@ import NavHorizontale from '../components/NavHorizontale'
 import NavVerticale from '../components/NavVerticale'
 import '../components/NavHorizontale.css'
 import './User.css'
+import './Responsive.css'
 
 import Datas from '../Axios/AxiosId'
 import Objectifs from '../components/Objectifs'

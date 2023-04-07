@@ -1,32 +1,46 @@
-  #poids .recharts-responsive-container {
-    background-color: #FBFBFB;
-    border-radius: 5px;
-  }
-  
-  #poids .recharts-text {
-    fill: black;
-    font-size: 12px;
-  }
-  
-  #poids .recharts-layer .recharts-bar-rectangle {
-    border-radius: 5px;
-  }
-  
-  #poids .title-heading {
-    font-size: 15px;
-    margin-left: 20px;
-  }
-  
-  #poids .recharts-legend-icon {
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-  }
-  
-  #poids .yAxis .recharts-cartesian-axis-line {
-    display: none;
-  }
-  
-  #poids .recharts-cartesian-axis-tick-line {
-    display: none;
-  }
+#poids .recharts-responsive-container {
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}
+
+#poids .recharts-text {
+  fill: black;
+  font-size: 12px;
+}
+
+#poids .recharts-layer .recharts-bar-rectangle {
+  border-radius: 5px;
+}
+
+#poids .title-heading {
+  font-size: 15px;
+  margin-left: 20px;
+  padding-top: 30px;
+  margin-top: 0;
+}
+
+#poids .recharts-legend-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+#poids .yAxis .recharts-cartesian-axis-line {
+  display: none;
+}
+
+#poids .recharts-cartesian-axis-tick-line {
+  display: none;
+}
+
+#poids .recharts-legend-item-text {
+  color: #74798C;
+}
+
+#poids element.style {
+  color: #74798C;
+}
+
+#poids .recharts-surface {
+  border-radius: 7px;
+}
