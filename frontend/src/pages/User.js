@@ -27,9 +27,16 @@ export default function AffichageDonneesJSON() {
     console.log(test());
   }, [])
 
+  // Variable données API
   let datasUser = Object.assign({}, Datas());
+  // Variable données mockées
   let datasUserMock = Object.assign({}, DatasMock());
 
+  // Création du compteur de calories avec une virgule comme séparateur des milliers
+  let calorieCountMock = new Intl.NumberFormat("en-IN", {style: "decimal", maximumFractionDigits: 0}).format(datasUserMock.calorieCount);
+  let calorieCount = new Intl.NumberFormat("en-IN", {style: "decimal", maximumFractionDigits: 0}).format(datasUser.calorieCount);
+
+  // Si l'API n'est pas lancée alors affichage des données mockées
   if (Object.keys(datasUser).length === 0 && datasUser.constructor === Object) {console.log("dataUser est vide, affichage des données mockées.");
     return (
       <div className='utilisateurs'>
@@ -59,7 +66,7 @@ export default function AffichageDonneesJSON() {
                   </div>
                 </div>
                 <div id="cards">
-                  <Card description={"Calories"} valeur={`${datasUserMock.calorieCount/1000}kCal`} icon={calories} />
+                  <Card description={"Calories"} valeur={`${calorieCountMock}kCal`} icon={calories} />
                   <Card description={"Proteines"} valeur={`${datasUserMock.proteinCount}g`} icon={protein} />
                   <Card description={"Glucides"} valeur={`${datasUserMock.carbohydrateCount}g`} icon={carbs} />
                   <Card description={"Lipides"} valeur={`${datasUserMock.lipidCount}g`} icon={fat} />
@@ -70,6 +77,7 @@ export default function AffichageDonneesJSON() {
         </nav>
       </div>
     )
+  // Si l'API est lancée alors affichage des données API
   } else {console.log("dataUser est rempli, affichage des données API.");
     return (
       <div className='utilisateurs'>
@@ -99,7 +107,7 @@ export default function AffichageDonneesJSON() {
                   </div>
                 </div>
                 <div id="cards">
-                  <Card description={"Calories"} valeur={`${datasUser.calorieCount/1000}kCal`} icon={calories} />
+                  <Card description={"Calories"} valeur={`${calorieCount}kCal`} icon={calories} />
                   <Card description={"Proteines"} valeur={`${datasUser.proteinCount}g`} icon={protein} />
                   <Card description={"Glucides"} valeur={`${datasUser.carbohydrateCount}g`} icon={carbs} />
                   <Card description={"Lipides"} valeur={`${datasUser.lipidCount}g`} icon={fat} />

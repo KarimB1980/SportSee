@@ -25,6 +25,7 @@ const Text1 = styled.p `
 `
 
 export default function Objectifs() {
+  // Variable données API
   let dataAverageSessions = Object.assign({}, DatasAverageSessions());
   let dataAverageSessions1 = Object.assign({}, dataAverageSessions[0]);
   let dataAverageSessions2 = Object.assign({}, dataAverageSessions[1]);
@@ -44,7 +45,7 @@ export default function Objectifs() {
 
   const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];
 
-
+  // Variable données mockées
   let dataAverageSessionsMock = Object.assign({}, DatasAverageSessionsMock());
   let dataAverageSessionsMock1 = Object.assign({}, dataAverageSessionsMock[0]);
   let dataAverageSessionsMock2 = Object.assign({}, dataAverageSessionsMock[1]);
@@ -80,6 +81,7 @@ export default function Objectifs() {
     payload: PropTypes.array,
   };
 
+  // Si l'API n'est pas lancée alors affichage des données mockées
   if (Object.keys(dataAverageSessions).length === 0 && dataAverageSessions.constructor === Object) {console.log("dataAverageSessions est vide, affichage des données mockées.");
     return (
       <>
@@ -101,6 +103,7 @@ export default function Objectifs() {
         </ResponsiveContainer>
       </>
     );
+  // Si l'API est lancée alors affichage des données API
   } else { console.log("dataAverageSessions est rempli, affichage des données API.");
     return (
       <>

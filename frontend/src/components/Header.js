@@ -4,9 +4,12 @@ import DatasMock from '../Axios/Mocks/AxiosIdMock'
 import './Header.css'
 
 export default function Header() {
+  // Variable données API
   let datasUser = Object.assign({}, Datas());
+  // Variable données mockées
   let datasUserMock = Object.assign({}, DatasMock());
 
+  // Si l'API n'est pas lancée alors affichage des données mockées
   if (Object.keys(datasUser).length === 0 && datasUser.constructor === Object) {console.log("dataUserHeader est vide, affichage des données mockées.");
     return (
       <header>
@@ -19,6 +22,7 @@ export default function Header() {
         </div>
       </header>
     )
+  // Si l'API est lancée alors affichage des données API
   } else { console.log("dataUserHeader est rempli, affichage des données API.");
     return (
       <header>

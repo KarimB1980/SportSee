@@ -5,6 +5,7 @@ import DatasPerformanceMock from '../Axios/Mocks/AxiosPerformanceMock'
 import './Radar.css'
 
 export default function RadarDashboard() {
+  // Variable données API
   let dataPerformance = Object.assign({}, DatasPerformance());
   let dataPerformance1 = Object.assign({}, dataPerformance[0]);
   let dataPerformance2 = Object.assign({}, dataPerformance[1]);
@@ -22,7 +23,7 @@ export default function RadarDashboard() {
 
   const data = [objet1,objet2,objet3,objet4,objet5,objet6];
 
-
+  // Variable données mockées
   let dataPerformanceMock = Object.assign({}, DatasPerformanceMock());
   let dataPerformanceMock1 = Object.assign({}, dataPerformanceMock[0]);
   let dataPerformanceMock2 = Object.assign({}, dataPerformanceMock[1]);
@@ -40,6 +41,7 @@ export default function RadarDashboard() {
 
   const dataMock = [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6];
 
+  // Si l'API n'est pas lancée alors affichage des données mockées
   if (Object.keys(dataPerformance).length === 0 && dataPerformance.constructor === Object) {console.log("dataPerformance est vide, affichage des données mockées.");
     return (
       <ResponsiveContainer width="100%" height="100%">
@@ -50,6 +52,7 @@ export default function RadarDashboard() {
         </RadarChart>
       </ResponsiveContainer>
     );
+  // Si l'API est lancée alors affichage des données API
   } else { console.log("dataPerformance est rempli, affichage des données API.");
     return (
       <ResponsiveContainer width="100%" height="100%">

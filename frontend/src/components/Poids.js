@@ -64,6 +64,7 @@ margin-top:7px;
 `
 
 export default function Poids() {
+  // Variable données API
   let dataActivity = Object.assign({}, DatasActivity());
   let dataActivity1 = Object.assign({}, dataActivity[0]);
   let dataActivity2 = Object.assign({}, dataActivity[1]);
@@ -83,7 +84,7 @@ export default function Poids() {
 
   const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];
 
-
+  // Variable données mockées
   let dataActivityMock = Object.assign({}, DatasActivityMock());
   let dataActivityMock1 = Object.assign({}, dataActivityMock[0]);
   let dataActivityMock2 = Object.assign({}, dataActivityMock[1]);
@@ -120,6 +121,7 @@ export default function Poids() {
     payload: PropTypes.array,
   };
 
+  // Si l'API n'est pas lancée alors affichage des données mockées
   if (Object.keys(dataActivity).length === 0 && dataActivity.constructor === Object) {console.log("dataActivity est vide, affichage des données mockées.");
     return (
       <>
@@ -153,6 +155,7 @@ export default function Poids() {
         </ResponsiveContainer>
       </>
     );
+  // Si l'API est lancée alors affichage des données API
   } else { console.log("dataActivity est rempli, affichage des données API.");
     return (
       <>
