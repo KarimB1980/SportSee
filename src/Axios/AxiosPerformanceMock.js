@@ -2,12 +2,12 @@ import axios from "axios";
 import React from "react";
 import { useParams } from 'react-router-dom'
 
-export default function DatasPerformance() {
+export default function DatasPerformanceMock() {
   // Récupération de l'ID de l'utilisateur
   const { userid } = useParams()
 
-  let baseURL = `http://localhost:3000/user/${userid}/performance`;
-  //let baseURL = `./../../_mocks/user/${userid}/performance.json`;
+  //let baseURL = `http://localhost:3000/user/${userid}/performance`;
+  let baseURL = `./../../_mocks/user/${userid}/performance.json`;
 
   const [post, setPost] = React.useState(null);
 

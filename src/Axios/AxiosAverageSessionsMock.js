@@ -2,12 +2,12 @@ import axios from "axios";
 import React from "react";
 import { useParams } from 'react-router-dom'
 
-export default function DatasAverageSessions() {
+export default function DatasAverageSessionsMock() {
   // Récupération de l'ID de l'utilisateur
   const { userid } = useParams()
 
-  let baseURL = `http://localhost:3000/user/${userid}/average-sessions`;
-  //let baseURL = `./../../_mocks/user/${userid}/average-sessions.json`;
+  //let baseURL = `http://localhost:3000/user/${userid}/average-sessions`;
+  let baseURL = `./../../_mocks/user/${userid}/average-sessions.json`;
 
   const [post, setPost] = React.useState(null);
 
