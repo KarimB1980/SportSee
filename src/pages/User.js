@@ -5,8 +5,8 @@ import '../components/NavHorizontale.css'
 import './User.css'
 import './Responsive.css'
 
-import Datas from '../Axios/AxiosId'
-import DatasMock from '../Axios/AxiosIdMock'
+import Datas from '../Axios/API/AxiosId'
+import DatasMock from '../Axios/Mocks/AxiosIdMock'
 import Objectifs from '../components/Objectifs'
 import RadarDashboard from '../components/Radar'
 import KPI from '../components/KPI'
@@ -27,13 +27,10 @@ export default function AffichageDonneesJSON() {
     console.log(test());
   }, [])
 
-  let  datasUser = Object.assign({}, Datas());
-  console.log(datasUser);
+  let datasUser = Object.assign({}, Datas());
+  let datasUserMock = Object.assign({}, DatasMock());
 
-  const datasUserMock = Object.assign({}, DatasMock());
-
-  // eslint-disable-next-line
-  if (datasUser = {}) {console.log("dataUser est vide.");
+  if (Object.keys(datasUser).length === 0 && datasUser.constructor === Object) {console.log("dataUser est vide, affichage des données mockées.");
     return (
       <div className='utilisateurs'>
         <nav>
@@ -73,7 +70,7 @@ export default function AffichageDonneesJSON() {
         </nav>
       </div>
     )
-  } else {
+  } else {console.log("dataUser est rempli, affichage des données API.");
     return (
       <div className='utilisateurs'>
         <nav>
@@ -114,5 +111,4 @@ export default function AffichageDonneesJSON() {
       </div>
     )
   }
-
 }

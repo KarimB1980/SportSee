@@ -1,14 +1,13 @@
 import React from 'react'
-import Datas from '../Axios/AxiosId'
-import DatasMock from '../Axios/AxiosIdMock'
+import Datas from '../Axios/API/AxiosId'
+import DatasMock from '../Axios/Mocks/AxiosIdMock'
 import './Header.css'
 
 export default function Header() {
   let datasUser = Object.assign({}, Datas());
   let datasUserMock = Object.assign({}, DatasMock());
 
-  // eslint-disable-next-line
-  if (datasUser = {}) {console.log("data est vide.");
+  if (Object.keys(datasUser).length === 0 && datasUser.constructor === Object) {console.log("dataUserHeader est vide, affichage des données mockées.");
     return (
       <header>
         <div className='nameUser'>
@@ -20,7 +19,7 @@ export default function Header() {
         </div>
       </header>
     )
-  } else {
+  } else { console.log("dataUserHeader est rempli, affichage des données API.");
     return (
       <header>
         <div className='nameUser'>

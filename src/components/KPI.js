@@ -1,6 +1,6 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts"
-import Datas from "../Axios/AxiosId"
-import DatasMock from "../Axios/AxiosIdMock"
+import Datas from "../Axios/API/AxiosId"
+import DatasMock from "../Axios/Mocks/AxiosIdMock"
 import './KPI.css'
 
 export default function KPI() {
@@ -14,8 +14,7 @@ export default function KPI() {
   let tableauMock = [];
   tableauMock = [{todayScoreMock}];
 
-  // eslint-disable-next-line
-  if (data = {}) {console.log("data est vide.");
+  if (Object.keys(data).length === 0 && data.constructor === Object) {console.log("data est vide, affichage des données mockées.");
     return (
       <>
         <div className="contenairKPI">
@@ -54,7 +53,7 @@ export default function KPI() {
         </div>
       </>
     );
-  } else {
+  } else { console.log("data est rempli, affichage des données API.");
     return (
       <>
         <div className="contenairKPI">

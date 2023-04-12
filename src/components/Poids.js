@@ -1,11 +1,67 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import DatasActivity from '../Axios/AxiosActivity'
-import DatasActivityMock from '../Axios/AxiosActivityMock'
+import DatasActivity from '../Axios/API/AxiosActivity'
+import DatasActivityMock from '../Axios/Mocks/AxiosActivityMock'
 import './Poids.css'
 
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
+const Head = styled.div`
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+margin-right: 20px;
+`
+
+const Title= styled.h2`
+font-size: 15px;
+line-height: 24px;
+color: #20253A;
+margin-left: 20px;
+`
+
+const Text = styled.p`
+font-weight: 500;
+font-size: 14px;
+color: #74798c;
+margin-left: 10px;
+`
+
+const Icon = styled.div`
+height: 8px;
+width: 8px;
+border-radius: 50%;
+background-color: ${(props) => props.color};
+align-self: center;
+margin-left: 30px;
+`
+
+const Legend = styled.div`
+display: flex;
+`
+
+const Info = styled.div`
+display: flex;
+align-items:center;
+`
+
+const Container = styled.div`
+background-color:#E60000;
+width:39px;
+height:63px;
+display:flex;
+flex-direction:column;
+align-items:center;
+`
+
+const Text1 = styled.p `
+color:white;
+font-weight: 500;
+font-size: 10px;
+line-height: 18px;
+margin-top:7px;
+`
 
 export default function Poids() {
   let dataActivity = Object.assign({}, DatasActivity());
@@ -47,62 +103,6 @@ export default function Poids() {
 
   const dataMock = [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6,objetMock7];
 
-  const Head = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    margin-right: 20px;
-	`
-
-  const Title= styled.h2`
-    font-size: 15px;
-    line-height: 24px;
-    color: #20253A;
-    margin-left: 20px;
-  `
-
-  const Text = styled.p`
-    font-weight: 500;
-    font-size: 14px;
-    color: #74798c;
-    margin-left: 10px;
-  `
-
-  const Icon = styled.div`
-    height: 8px;
-    width: 8px;
-    border-radius: 50%;
-    background-color: ${(props) => props.color};
-    align-self: center;
-    margin-left: 30px;
-  `
-
-  const Legend = styled.div`
-    display: flex;
-  `
-
-  const Info = styled.div`
-    display: flex;
-    align-items:center;
-  `
-
-  const Container = styled.div`
-    background-color:#E60000;
-    width:39px;
-    height:63px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  `
-
-  const Text1 = styled.p `
-    color:white;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 18px;
-    margin-top:7px;
-  `
-
   function ActivityToolType({active, payload}) {
     if (active){
     return (
@@ -120,8 +120,7 @@ export default function Poids() {
     payload: PropTypes.array,
   };
 
-  // eslint-disable-next-line
-  if (dataActivity = {}) {console.log("data est vide.");
+  if (Object.keys(dataActivity).length === 0 && dataActivity.constructor === Object) {console.log("dataActivity est vide, affichage des données mockées.");
     return (
       <>
         <Head>
@@ -154,7 +153,7 @@ export default function Poids() {
         </ResponsiveContainer>
       </>
     );
-  } else {
+  } else { console.log("dataActivity est rempli, affichage des données API.");
     return (
       <>
         <Head>

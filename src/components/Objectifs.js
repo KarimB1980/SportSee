@@ -1,11 +1,28 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
-import DatasAverageSessions from '../Axios/AxiosAverageSessions'
-import DatasAverageSessionsMock from '../Axios/AxiosAverageSessionsMock'
+import DatasAverageSessions from '../Axios/API/AxiosAverageSessions'
+import DatasAverageSessionsMock from '../Axios/Mocks/AxiosAverageSessionsMock'
 import './Objectifs.css'
 
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+
+const Container = styled.div`
+background-color:#FFFFFF;
+width:39px;
+height:25px;
+display:flex;
+flex-direction:column;
+align-items:center;
+`
+
+const Text1 = styled.p `
+  color:black;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 13px;
+  margin-top:7px;
+`
 
 export default function Objectifs() {
   let dataAverageSessions = Object.assign({}, DatasAverageSessions());
@@ -47,24 +64,6 @@ export default function Objectifs() {
 
   const dataMock = [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6,objetMock7];
 
-
-  const Container = styled.div`
-  background-color:#FFFFFF;
-  width:39px;
-  height:25px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  `
-
-  const Text1 = styled.p `
-    color:black;
-    font-weight: 500;
-    font-size: 8px;
-    line-height: 13px;
-    margin-top:7px;
-  `
-
   function ObjectifsToolType({active, payload}) {
     if (active){
     return (
@@ -81,8 +80,7 @@ export default function Objectifs() {
     payload: PropTypes.array,
   };
 
-  // eslint-disable-next-line
-  if (dataAverageSessions = {}) {console.log("data est vide.");
+  if (Object.keys(dataAverageSessions).length === 0 && dataAverageSessions.constructor === Object) {console.log("dataAverageSessions est vide, affichage des données mockées.");
     return (
       <>
         <h2 className="text-heading">
@@ -103,7 +101,7 @@ export default function Objectifs() {
         </ResponsiveContainer>
       </>
     );
-  } else {
+  } else { console.log("dataAverageSessions est rempli, affichage des données API.");
     return (
       <>
         <h2 className="text-heading">

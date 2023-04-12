@@ -1,7 +1,7 @@
 import React from 'react'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts'
-import DatasPerformance from '../Axios/AxiosPerformance'
-import DatasPerformanceMock from '../Axios/AxiosPerformanceMock'
+import DatasPerformance from '../Axios/API/AxiosPerformance'
+import DatasPerformanceMock from '../Axios/Mocks/AxiosPerformanceMock'
 import './Radar.css'
 
 export default function RadarDashboard() {
@@ -39,9 +39,8 @@ export default function RadarDashboard() {
   let objetMock6 = {kind:'Cardio', value:dataPerformanceMock1['value']};
 
   const dataMock = [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6];
-  
-  // eslint-disable-next-line
-  if (dataPerformance = {}) {console.log("data est vide.");
+
+  if (Object.keys(dataPerformance).length === 0 && dataPerformance.constructor === Object) {console.log("dataPerformance est vide, affichage des données mockées.");
     return (
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="70%" data={dataMock}>
@@ -51,7 +50,7 @@ export default function RadarDashboard() {
         </RadarChart>
       </ResponsiveContainer>
     );
-  } else {
+  } else { console.log("dataPerformance est rempli, affichage des données API.");
     return (
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
