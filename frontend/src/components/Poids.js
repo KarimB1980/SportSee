@@ -1,7 +1,5 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import DatasActivity from '../Axios/API/AxiosActivity'
-import DatasActivityMock from '../Axios/Mocks/AxiosActivityMock'
 import './Poids.css'
 
 import styled from 'styled-components';
@@ -63,16 +61,16 @@ line-height: 18px;
 margin-top:7px;
 `
 
-export default function Poids() {
+export default function Poids({userActivity}) {
   // Variable données API
-  let dataActivity = Object.assign({}, DatasActivity());
-  let dataActivity1 = Object.assign({}, dataActivity[0]);
-  let dataActivity2 = Object.assign({}, dataActivity[1]);
-  let dataActivity3 = Object.assign({}, dataActivity[2]);
-  let dataActivity4 = Object.assign({}, dataActivity[3]);
-  let dataActivity5 = Object.assign({}, dataActivity[4]);
-  let dataActivity6 = Object.assign({}, dataActivity[5]);
-  let dataActivity7 = Object.assign({}, dataActivity[6]);
+ 
+  let dataActivity1 = Object.assign({}, userActivity[0]);
+  let dataActivity2 = Object.assign({}, userActivity[1]);
+  let dataActivity3 = Object.assign({}, userActivity[2]);
+  let dataActivity4 = Object.assign({}, userActivity[3]);
+  let dataActivity5 = Object.assign({}, userActivity[4]);
+  let dataActivity6 = Object.assign({}, userActivity[5]);
+  let dataActivity7 = Object.assign({}, userActivity[6]);
 
   let objet1 = {day:dataActivity1['day'], 'Poids (kg)':dataActivity1['kilogram'],'Calories brûlées (kCal)':dataActivity1['calorie']};
   let objet2 = {day:dataActivity2['day'], 'Poids (kg)':dataActivity2['kilogram'],'Calories brûlées (kCal)':dataActivity2['calorie']};
@@ -82,27 +80,7 @@ export default function Poids() {
   let objet6 = {day:dataActivity6['day'], 'Poids (kg)':dataActivity6['kilogram'],'Calories brûlées (kCal)':dataActivity6['calorie']};
   let objet7 = {day:dataActivity7['day'], 'Poids (kg)':dataActivity7['kilogram'],'Calories brûlées (kCal)':dataActivity7['calorie']};
 
-  const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];
-
-  // Variable données mockées
-  let dataActivityMock = Object.assign({}, DatasActivityMock());
-  let dataActivityMock1 = Object.assign({}, dataActivityMock[0]);
-  let dataActivityMock2 = Object.assign({}, dataActivityMock[1]);
-  let dataActivityMock3 = Object.assign({}, dataActivityMock[2]);
-  let dataActivityMock4 = Object.assign({}, dataActivityMock[3]);
-  let dataActivityMock5 = Object.assign({}, dataActivityMock[4]);
-  let dataActivityMock6 = Object.assign({}, dataActivityMock[5]);
-  let dataActivityMock7 = Object.assign({}, dataActivityMock[6]);
-
-  let objetMock1 =  {day:dataActivityMock1['day'], 'Poids (kg)':dataActivityMock1['kilogram'],'Calories brûlées (kCal)':dataActivityMock1['calorie']};
-  let objetMock2 =  {day:dataActivityMock2['day'], 'Poids (kg)':dataActivityMock2['kilogram'],'Calories brûlées (kCal)':dataActivityMock2['calorie']};
-  let objetMock3 =  {day:dataActivityMock3['day'], 'Poids (kg)':dataActivityMock3['kilogram'],'Calories brûlées (kCal)':dataActivityMock3['calorie']};
-  let objetMock4 =  {day:dataActivityMock4['day'], 'Poids (kg)':dataActivityMock4['kilogram'],'Calories brûlées (kCal)':dataActivityMock4['calorie']};
-  let objetMock5 =  {day:dataActivityMock5['day'], 'Poids (kg)':dataActivityMock5['kilogram'],'Calories brûlées (kCal)':dataActivityMock5['calorie']};
-  let objetMock6 =  {day:dataActivityMock6['day'], 'Poids (kg)':dataActivityMock6['kilogram'],'Calories brûlées (kCal)':dataActivityMock6['calorie']};
-  let objetMock7 =  {day:dataActivityMock7['day'], 'Poids (kg)':dataActivityMock7['kilogram'],'Calories brûlées (kCal)':dataActivityMock7['calorie']};
-
-  const dataMock = [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6,objetMock7];
+  const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];  
 
   function ActivityToolType({active, payload}) {
     if (active){
@@ -121,73 +99,36 @@ export default function Poids() {
     payload: PropTypes.array,
   };
 
-  // Si l'API n'est pas lancée alors affichage des données mockées
-  if (Object.keys(dataActivity).length === 0 && dataActivity.constructor === Object) {console.log("dataActivity est vide, affichage des données mockées.");
-    return (
-      <>
-        <Head>
-          <Title>Activité quotidienne</Title>
-          <Legend>
-            <Info>
-              <Icon color='#282D30' />
-              <Text>Poids (kg)</Text>
-            </Info>
-            <Info>
-              <Icon color='#E60000' />
-              <Text>Calories brûlées (kCal)</Text>
-            </Info>
-          </Legend>
-        </Head>
+  return (
+    <>
+      <Head>
+        <Title>Activité quotidienne</Title>
+        <Legend>
+          <Info>
+            <Icon color='#282D30' />
+            <Text>Poids (kg)</Text>
+          </Info>
+          <Info>
+            <Icon color='#E60000' />
+            <Text>Calories brûlées (kCal)</Text>
+          </Info>
+        </Legend>
+      </Head>
 
-        <ResponsiveContainer width="100%" height="100%" >
-          <BarChart
-            width={500}
-            height={300}
-            data={dataMock}
-          >
-            <CartesianGrid vertical={false} strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis orientation="right" />
-            <Tooltip content={<ActivityToolType/>} />
-            <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} radius={[10, 10, 0, 0]} />
-            <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} radius={[10, 10, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
-      </>
-    );
-  // Si l'API est lancée alors affichage des données API
-  } else { console.log("dataActivity est rempli, affichage des données API.");
-    return (
-      <>
-        <Head>
-          <Title>Activité quotidienne</Title>
-          <Legend>
-            <Info>
-              <Icon color='#282D30' />
-              <Text>Poids (kg)</Text>
-            </Info>
-            <Info>
-              <Icon color='#E60000' />
-              <Text>Calories brûlées (kCal)</Text>
-            </Info>
-          </Legend>
-        </Head>
-
-        <ResponsiveContainer width="100%" height="100%" >
-          <BarChart
-            width={500}
-            height={300}
-            data={data}
-          >
-            <CartesianGrid vertical={false} strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis orientation="right" />
-            <Tooltip content={<ActivityToolType/>} />
-            <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} radius={[10, 10, 0, 0]} />
-            <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} radius={[10, 10, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
-      </>
-    )
-  }
+      <ResponsiveContainer width="100%" height="100%" >
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+        >
+          <CartesianGrid vertical={false} strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis orientation="right" />
+          <Tooltip content={<ActivityToolType/>} />
+          <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} radius={[10, 10, 0, 0]} />
+          <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} radius={[10, 10, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    </>
+  );
 }
