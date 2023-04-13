@@ -61,7 +61,60 @@ line-height: 18px;
 margin-top:7px;
 `
 
-export default function Poids({userActivity}) {
+const Poids = ({userActivity}) => {
+  function ActivityToolType({active, payload}) {
+    if (active){
+    return (
+        <Container>
+            <Text1>{payload[0].value}kg</Text1>
+            <Text1>{payload[1].value}Kcal</Text1>
+        </Container>
+     );
+    }
+    return null
+  }
+  ActivityToolType.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  };
+
+  return (
+    <>
+      <Head>
+        <Title>Activité quotidienne</Title>
+        <Legend>
+          <Info>
+            <Icon color='#282D30' />
+            <Text>Poids (kg)</Text>
+          </Info>
+          <Info>
+            <Icon color='#E60000' />
+            <Text>Calories brûlées (kCal)</Text>
+          </Info>
+        </Legend>
+      </Head>
+
+      <ResponsiveContainer width="100%" height="100%" >
+        <BarChart
+          width={500}
+          height={300}
+          data={userActivity}
+        >
+          <CartesianGrid vertical={false} strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis orientation="right" />
+          <Tooltip content={<ActivityToolType/>} />
+          <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={[10, 10, 0, 0]} />
+          <Bar dataKey="calorie" fill="#E60000" barSize={7} radius={[10, 10, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    </>
+  );
+};
+
+export default Poids;
+
+/*export default function Poids({userActivity}) {
   // Variable données API
  
   let dataActivity1 = Object.assign({}, userActivity[0]);
@@ -80,7 +133,7 @@ export default function Poids({userActivity}) {
   let objet6 = {day:dataActivity6['day'], 'Poids (kg)':dataActivity6['kilogram'],'Calories brûlées (kCal)':dataActivity6['calorie']};
   let objet7 = {day:dataActivity7['day'], 'Poids (kg)':dataActivity7['kilogram'],'Calories brûlées (kCal)':dataActivity7['calorie']};
 
-  const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];  
+  const data = [objet1,objet2,objet3,objet4,objet5,objet6,objet7];
 
   function ActivityToolType({active, payload}) {
     if (active){
@@ -131,4 +184,4 @@ export default function Poids({userActivity}) {
       </ResponsiveContainer>
     </>
   );
-}
+}*/

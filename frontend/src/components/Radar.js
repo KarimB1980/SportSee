@@ -1,10 +1,25 @@
 import React from 'react'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts'
-import DatasPerformance from '../Axios/API/AxiosPerformance'
-import DatasPerformanceMock from '../Axios/Mocks/AxiosPerformanceMock'
+//import DatasPerformance from '../Axios/API/AxiosPerformance'
+//import DatasPerformanceMock from '../Axios/Mocks/AxiosPerformanceMock'
 import './Radar.css'
 
-export default function RadarDashboard() {
+const RadarDashboard = ({userRadarDashboard}) => {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <RadarChart cx="50%" cy="50%" outerRadius="70%" data={userRadarDashboard}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey="kind" />
+        <Radar dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.6} />
+      </RadarChart>
+    </ResponsiveContainer>
+  );
+}
+
+export default RadarDashboard;
+
+
+/*export default function RadarDashboard() {
   // Variable données API
   let dataPerformance = Object.assign({}, DatasPerformance());
   let dataPerformance1 = Object.assign({}, dataPerformance[0]);
@@ -64,4 +79,4 @@ export default function RadarDashboard() {
       </ResponsiveContainer>
     );
   }
-}
+}*/

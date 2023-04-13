@@ -1,7 +1,7 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
-import DatasAverageSessions from '../Axios/API/AxiosAverageSessions'
-import DatasAverageSessionsMock from '../Axios/Mocks/AxiosAverageSessionsMock'
+//import DatasAverageSessions from '../Axios/API/AxiosAverageSessions'
+//import DatasAverageSessionsMock from '../Axios/Mocks/AxiosAverageSessionsMock'
 import './Objectifs.css'
 
 import styled from 'styled-components'
@@ -24,7 +24,49 @@ const Text1 = styled.p `
   margin-top:7px;
 `
 
-export default function Objectifs() {
+const Objectifs = ({userAverageSessions}) => {
+  function ObjectifsToolType({active, payload}) {
+    if (active){
+    return (
+        <Container>
+            <Text1>{payload[0].value} min</Text1>
+        </Container>
+    
+    );
+    }
+    return null
+  }
+  ObjectifsToolType.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  };
+
+  return (
+    <>
+      <h2 className="text-heading">
+        <span>Durée moyenne des</span>
+        <span>sessions</span>
+      </h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          width={500}
+          height={300}
+          data={userAverageSessions}
+        >
+          <XAxis dataKey="day" stroke="#FFFFFF" opacity={0.5} />
+          <YAxis hide="true" />
+          <Tooltip content={<ObjectifsToolType/>} />
+          <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" fill='#000000' dot='' />
+        </LineChart>
+      </ResponsiveContainer>
+    </>
+  );
+}
+
+export default Objectifs;
+
+
+/*export default function Objectifs() {
   // Variable données API
   let dataAverageSessions = Object.assign({}, DatasAverageSessions());
   let dataAverageSessions1 = Object.assign({}, dataAverageSessions[0]);
@@ -126,4 +168,4 @@ export default function Objectifs() {
       </>
     );
   }
-}
+}*/

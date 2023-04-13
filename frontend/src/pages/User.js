@@ -7,6 +7,7 @@ import './Responsive.css'
 
 import Datas from '../Axios/API/AxiosId'
 import DatasMock from '../Axios/Mocks/AxiosIdMock'
+
 import Objectifs from '../components/Objectifs'
 import RadarDashboard from '../components/Radar'
 import KPI from '../components/KPI'
@@ -28,6 +29,9 @@ import getAllData from '../_service/callerService'
 const AffichageDonneesJSON = () => {
   const [user, setUser] = useState([])
   const [activity, setActivity] = useState([])
+  const [averageSessions, setAverageSessions] = useState([])
+  const [radarDashboard, setRadarDashboard] = useState([])
+
   const [load, setLoad] = useState(true)
 
   useEffect(() => {
@@ -37,6 +41,9 @@ const AffichageDonneesJSON = () => {
         console.log(data)
         setUser(data.user)
         setActivity(data.activity)
+        setAverageSessions(data.averageSessions)
+        setRadarDashboard(data.radarDashboard)
+
         setLoad(false)
       })
       .catch(err => console.log(err))
@@ -73,9 +80,11 @@ const AffichageDonneesJSON = () => {
                 <div className='composants'>
                   <div id='objectifs'>
                     {/* <Objectifs/> */}
+                    <Objectifs userAverageSessions={averageSessions}/>
                   </div>
                   <div id='radar'>
                     {/* <RadarDashboard/> */}
+                    <RadarDashboard userRadarDashboard={radarDashboard} />
                   </div>
                   <div id='kpi'>
                     {/* <KPI/> */}
