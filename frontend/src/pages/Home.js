@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom'
-import './Responsive.css'
-
 
 // Création de la page d'accueil
 const Home = () => {
 
+  let mock =  localStorage.getItem('mock')
+  if (mock==="true") {
+    document.getElementById('root').style.backgroundColor = " #fcfed0"; 
+  }
+  
   let status = localStorage.getItem('mock')
-  //console.log(status)
 
   let [API, Mocks] = useState(status);
-  //console.log(API)
 
   // eslint-disable-next-line
   useEffect(() => {
@@ -19,9 +20,8 @@ const Home = () => {
   })
 
   if (API==="true") {
-    //console.log(API)
     return (
-      <div className="App">
+      <div className="Accueil">
         <div className="titre">
           <h1>
             Choix de l'utilisateur
@@ -40,7 +40,7 @@ const Home = () => {
     )
   } else {
     return (
-      <div className="App">
+      <div className="Accueil">
         <div className="titre">
           <h1>
             Choix de l'utilisateur
@@ -55,7 +55,6 @@ const Home = () => {
             window.location.reload(false);
           }} className="boutondonnees" id="donneesAPI" > Données API </button>
         </div>
-        {/* <Switch intitule1="API" intitule2="Mock" /> */}
       </div>
     )
   }

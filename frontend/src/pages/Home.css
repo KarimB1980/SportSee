@@ -18,6 +18,9 @@
   justify-content: space-between;
   margin-top: 50px;
 }
+.choixUtilisateur a:hover {
+  text-decoration: underline;
+}
 
 .boutondonnees {
   width: 150px;
@@ -28,3 +31,10 @@
 .boutondonnees:hover {
   cursor: pointer;
 }
+
+/*html {*/
+/*.Accueil {
+  /*transform: scale(2);
+  transform-origin: top center*/
+/*  width: 100%;
+}*/

@@ -104,10 +104,10 @@ const AffichageDonneesJSON = () => {
                   </div>
                 </div>
                 <div id="cards">
-                  <Card description={"Calories"} valeur="!Loading Data ...." icon={calories} />
-                  <Card description={"Proteines"} valeur="!Loading Data ...." icon={protein} />
-                  <Card description={"Glucides"} valeur="!Loading Data ...." icon={carbs} />
-                  <Card description={"Lipides"} valeur="!Loading Data ...." icon={fat} />
+                  <Card description={"Calories"} valeur="Loading Datas..." icon={calories} />
+                  <Card description={"Proteines"} valeur="Loading Datas..." icon={protein} />
+                  <Card description={"Glucides"} valeur="Loading Datas..." icon={carbs} />
+                  <Card description={"Lipides"} valeur="Loading Datas..." icon={fat} />
                 </div>
               </div>
             </div>
