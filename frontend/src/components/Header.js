@@ -3,25 +3,8 @@ import React from 'react'
 // import DatasMock from '../Axios/Mocks/AxiosIdMock'
 import './Header.css'
 
-// export default function Header({userData}) {
-//   console.log(userData)
-//     return (
-//       <header>
-//         <div className='nameUser'>
-//           <h1>Bonjour</h1>
-//           <h2>{userData}</h2>
-//         </div>
-//         <div className="messageObjectifs">
-//           <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
-//         </div>
-//       </header>
-//     )
-
-  
-// }
-
-
 const Header = ({userData}) => {
+  //console.log({userData})
     return (
       <header>
         <div className='nameUser'>

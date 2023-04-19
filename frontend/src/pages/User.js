@@ -5,8 +5,8 @@ import '../components/NavHorizontale.css'
 import './User.css'
 import './Responsive.css'
 
-import Datas from '../Axios/API/AxiosId'
-import DatasMock from '../Axios/Mocks/AxiosIdMock'
+//import Datas from '../Axios/API/AxiosId'
+//import DatasMock from '../Axios/Mocks/AxiosIdMock'
 
 import Objectifs from '../components/Objectifs'
 import RadarDashboard from '../components/Radar'
@@ -22,31 +22,47 @@ import protein from '../assets/icones/protein-icon.png';
 
 import getAllData from '../_service/callerService'
 
+import { useParams } from 'react-router-dom'
+
+//import Mock from '../components/Mock'
+
 //import test from '../_mocks/test'
 
-// Affichage des cartes des logements
 //export default function AffichageDonneesJSON() {
 const AffichageDonneesJSON = () => {
+  
   const [user, setUser] = useState([])
   const [activity, setActivity] = useState([])
   const [averageSessions, setAverageSessions] = useState([])
   const [radarDashboard, setRadarDashboard] = useState([])
+  const [userKPI, setuserKPI] = useState([])
+  const [userCard, setuserCard] = useState([])
 
   const [load, setLoad] = useState(true)
 
+  /*let url = window.location.href
+  console.log(url.substring(url.lastIndexOf("user/")+5))
+  let id = parseInt(url.substring(url.lastIndexOf("user/")+5))*/
+
+  const { userid } = useParams()
+  const id = parseInt(userid)
+
   useEffect(() => {
     // console.log(test());
-    getAllData(12)
+    getAllData(id)
       .then(data => {
-        console.log(data)
+        //console.log(data)
         setUser(data.user)
         setActivity(data.activity)
         setAverageSessions(data.averageSessions)
         setRadarDashboard(data.radarDashboard)
+        setuserKPI(data.userKPI)
+        setuserCard(data.userCard)
 
         setLoad(false)
       })
       .catch(err => console.log(err))
+  // eslint-disable-next-line
   }, [])
 
   // // Variable données API
@@ -59,7 +75,47 @@ const AffichageDonneesJSON = () => {
   // let calorieCount = new Intl.NumberFormat("en-IN", {style: "decimal", maximumFractionDigits: 0}).format(datasUser.calorieCount);
 
   if(load){
-    return <div>Loading data ....</div>
+    //return <div>Loading data ....</div>
+    return (
+      <div className='utilisateurs'>
+        <nav>
+          <header id='header-principal'>
+            <NavHorizontale />
+          </header>
+          <div id='asideUser'>
+            <NavVerticale />
+            <div className='poidsComposants'>
+              <div>Loading data ....</div>
+              <div className="poidsComposantsCards">     
+                <div className="composantsCards">
+                  <div id='poids'>
+                    <div>Loading datas...</div>
+                  </div>
+                  <div className='composants'>
+                    <div id='objectifs'>
+                      <div>Loading datas...</div>
+                    </div>
+                    <div id='radar'>
+                    <div>Loading datas...</div>
+                    </div>
+                    <div id='kpi'>
+                    <div>Loading datas...</div>
+                    </div>
+                  </div>
+                </div>
+                <div id="cards">
+                  <Card description={"Calories"} valeur="!Loading Data ...." icon={calories} />
+                  <Card description={"Proteines"} valeur="!Loading Data ...." icon={protein} />
+                  <Card description={"Glucides"} valeur="!Loading Data ...." icon={carbs} />
+                  <Card description={"Lipides"} valeur="!Loading Data ...." icon={fat} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    )
+    
   }
 
   return (
@@ -88,14 +144,19 @@ const AffichageDonneesJSON = () => {
                   </div>
                   <div id='kpi'>
                     {/* <KPI/> */}
+                    <KPI userKPI={userKPI} />
                   </div>
                 </div>
               </div>
               <div id="cards">
                 {/* <Card description={"Calories"} valeur={`${calorieCount}kCal`} icon={calories} />
-                <Card description={"Proteines"} valeur={`${datasUser.proteinCount}g`} icon={protein} />
+                <Card description={"Proteines"} valeur={`${datasUser.}g`} icon={protein} />
                 <Card description={"Glucides"} valeur={`${datasUser.carbohydrateCount}g`} icon={carbs} />
                 <Card description={"Lipides"} valeur={`${datasUser.lipidCount}g`} icon={fat} /> */}
+                <Card description={"Calories"} valeur={`${new Intl.NumberFormat("en-IN", {style: "decimal", maximumFractionDigits: 0}).format(userCard[0].keyData.calorieCount)}kCal`} icon={calories} />
+                <Card description={"Proteines"} valeur={`${userCard[0].keyData.proteinCount}g`} icon={protein} />
+                <Card description={"Glucides"} valeur={`${userCard[0].keyData.carbohydrateCount}g`} icon={carbs} />
+                <Card description={"Lipides"} valeur={`${userCard[0].keyData.lipidCount}g`} icon={fat} />
               </div>
             </div>
           </div>
@@ -103,6 +164,8 @@ const AffichageDonneesJSON = () => {
       </nav>
     </div>
   )
+
+  
 
 
 
