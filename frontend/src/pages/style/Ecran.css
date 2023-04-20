@@ -1,4 +1,8 @@
-.utilisateurs {transform-origin: top left;}
+.utilisateurs 
+    {
+        transform-origin: top left;
+        width: 1440px;
+    }
 
 @media all and (min-width: 1439px) and (max-width: 1440px)
 {

@@ -4,9 +4,9 @@ import icon1 from '../assets/icones/icon1.png'
 import icon2 from '../assets/icones/icon2.png'
 import icon3 from '../assets/icones/icon3.png'
 import icon4 from '../assets/icones/icon4.png'
-import './NavVerticale.css'
+import './style/NavVerticale.css'
 
-export default function NavVerticale() {
+const NavVerticale = () => {
   return (
     <aside id='aside-principal'>
       <nav id='aside'>
@@ -23,3 +23,5 @@ export default function NavVerticale() {
     </aside>
   )
 }
+
+export default NavVerticale

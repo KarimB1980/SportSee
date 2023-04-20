@@ -1,23 +1,14 @@
 import { getUserMockData, getActivityMockData, getAverageSessionsMockData, getRadarDashboardMockData, getKPIMockData, getCardMockData } from "./mock/userMockData"
 import { getUserAPIData, getActivityAPIData, getAverageSessionsAPIData, getRadarDashboardAPIData, getKPIAPIData, getCardAPIData } from "./API/userApiData"
 
-// let test = () => {return 'Marcel'}
-
-// export default test
-
 /**
  * Si mock donc fichier json
  * Si API url API
  */
 
 let mock =  localStorage.getItem('mock')
-//console.log(mock)
 
-//const mock = true
-//const mock = false
-
- const getAllData = async (id) => {
-// const getAllData = async (id,mock) => {
+const getAllData = async (id) => {
 
   if(mock==="true"){
     let user =  await getUserMockData(id)
@@ -29,8 +20,7 @@ let mock =  localStorage.getItem('mock')
 
     return {user, activity, averageSessions, radarDashboard, userKPI, userCard}
 
-  } else if (mock==="false") {
-    //return await getUserAPIData(id)
+  } else {
     let user =  await getUserAPIData(id)
     let activity = await getActivityAPIData(id)
     let averageSessions = await getAverageSessionsAPIData(id)

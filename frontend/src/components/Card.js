@@ -1,7 +1,7 @@
 import React from 'react';
-import './Card.css';
+import './style/Card.css';
 
-export default function Card({description, valeur, icon}) {
+const Card = ({description, valeur, icon}) => {
   return (
     <article className="card" id={description} >
       <img className="imageIconCard" src={icon} alt='imageIconCard' />
@@ -16,3 +16,5 @@ export default function Card({description, valeur, icon}) {
     </article>
   )
 }
+
+export default Card

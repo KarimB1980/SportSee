@@ -1,10 +1,9 @@
 import React from 'react'
-import './ErrorPage.css'
-import { Link } from "react-router-dom"
-import './Responsive.css'
+import './style/ErrorPage.css'
+import { Link } from 'react-router-dom'
 
 // Création de la page d'erreur
-export default function ErrorPage() {
+const ErrorPage = () => {
   return (
     <div id="page-erreur-404">
       <h1>Erreur 404</h1>
@@ -13,3 +12,5 @@ export default function ErrorPage() {
     </div>
   )
 }
+
+export default ErrorPage

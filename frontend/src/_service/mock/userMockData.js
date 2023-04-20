@@ -2,9 +2,7 @@ import {USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE} 
 
 let getUserMockData = async (id) => {
 
-  let brut = await USER_MAIN_DATA.filter(user => user.id === id)[0]
-
-  //console.log(brut)
+  let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
 
   let tableau = []
 
@@ -22,8 +20,7 @@ let getUserMockData = async (id) => {
 }
 
 let getActivityMockData = async (id) => {
-  let brut = await USER_ACTIVITY.filter(activity => activity.userId === id)[0]
-  //console.log(brut)
+  let brut = USER_ACTIVITY.filter(activity => activity.userId === id)[0]
 
   let tableau1 = [];
   let tableau2 = [];
@@ -65,10 +62,8 @@ let getActivityMockData = async (id) => {
 }
 
 let getAverageSessionsMockData = async (id) => {
-  let brut = await USER_AVERAGE_SESSIONS.filter(average => average.userId === id)[0]
-  //console.log(brut)
+  let brut = USER_AVERAGE_SESSIONS.filter(average => average.userId === id)[0]
 
-  // Variable données mockées
   let objetMock1 =  {day:'L', sessionLength:brut.sessions[0].sessionLength};
   let objetMock2 =  {day:'M', sessionLength:brut.sessions[1].sessionLength};
   let objetMock3 =  {day:'M', sessionLength:brut.sessions[2].sessionLength};
@@ -81,10 +76,8 @@ let getAverageSessionsMockData = async (id) => {
 }
 
 let getRadarDashboardMockData = async (id) => {
-  let brut = await USER_PERFORMANCE.filter(performance => performance.userId === id)[0]
-  //console.log(brut)
+  let brut = USER_PERFORMANCE.filter(performance => performance.userId === id)[0]
 
-  // Variable données mockées
   let objet1 = {kind:'Intensité', value:brut.data[5].value};
   let objet2 = {kind:'Vitesse', value:brut.data[4].value};
   let objet3 = {kind:'Force', value:brut.data[3].value};
@@ -92,27 +85,22 @@ let getRadarDashboardMockData = async (id) => {
   let objet5 = {kind:'Energie', value:brut.data[1].value};
   let objet6 = {kind:'Cardio', value:brut.data[0].value};
 
-  //console.log([objet1,objet2,objet3,objet4,objet5,objet6])
   return [objet1,objet2,objet3,objet4,objet5,objet6];
 }
 
 let getKPIMockData = async (id) => {
-  let brut = await USER_MAIN_DATA.filter(user => user.id === id)[0]
-  //console.log(brut)
+  let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
 
   let tableau = {todayScore:brut.todayScore};
 
-  //console.log([tableau])
   return [tableau];
 }
 
 let getCardMockData = async (id) => {
-  let brut = await USER_MAIN_DATA.filter(user => user.id === id)[0]
-  //console.log(brut)
+  let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
 
   let tableau = {keyData:brut.keyData};
 
-  //console.log([tableau])
   return [tableau];
 }
 

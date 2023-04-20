@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Home.css'
+import './style/Home.css'
 import { Link } from 'react-router-dom'
 
 // Création de la page d'accueil
@@ -9,7 +9,7 @@ const Home = () => {
   if (mock==="true") {
     document.getElementById('root').style.backgroundColor = " #fcfed0"; 
   }
-  
+
   let status = localStorage.getItem('mock')
 
   let [API, Mocks] = useState(status);

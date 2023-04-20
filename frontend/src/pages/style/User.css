@@ -67,3 +67,16 @@ h2 span {
   background-color: red;
   border-radius: 5px;
 }
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+}
+
+.errorMessage h2 {
+  display: block;
+  width: 1323px;
+  font-size: 45px;
+  text-align: center;
+  color: red;
+}

@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import logo from '../assets/logo/Logo.png'
+import './style/NavHorizontale.css'
 
-export default function NavHorizontale() {
+const NavHorizontale = () => {
   return (
     <nav id="navigation">
       <Link to={`/`}><img id='logo' src={logo} alt="logo" /></Link>
@@ -13,3 +14,5 @@ export default function NavHorizontale() {
     </nav>
   )
 }
+
+export default NavHorizontale
