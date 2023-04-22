@@ -1,7 +1,11 @@
 import { Cell, ResponsiveContainer, RadialBarChart, RadialBar } from "recharts"
 import './style/KPI.css'
+import PropTypes from 'prop-types'
 
 const KPI = ({userKPI}) => {
+  KPI.propTypes = {
+    userKPI: PropTypes.array
+  }
   return (
     <>
       <div className="contenairKPI">

@@ -4,6 +4,11 @@ const Axios = axios.create({
   baseURL: 'http://localhost:3000/'
 })
 
+/**
+ * Function to User data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getUserAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}`)
 
@@ -22,6 +27,11 @@ let getUserAPIData = async (id) => {
   return tableau
 }
 
+/**
+ * Function to Activity data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getActivityAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}/activity`)
 
@@ -64,6 +74,11 @@ let getActivityAPIData = async (id) => {
   return [tableau1, tableau2, tableau3, tableau4, tableau5, tableau6, tableau7];
 }
 
+/**
+ * Function to AverageSessions data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getAverageSessionsAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}/average-sessions`)
 
@@ -78,6 +93,11 @@ let getAverageSessionsAPIData = async (id) => {
   return [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6,objetMock7];
 }
 
+/**
+ * Function to Radar data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getRadarDashboardAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}/performance`)
 
@@ -92,7 +112,7 @@ let getRadarDashboardAPIData = async (id) => {
 }
 
 /**
- * Function to KPI datas from user
+ * Function to KPI data from user
  * @param {string} id 
  * @returns array
  */
@@ -104,6 +124,11 @@ let getKPIAPIData = async (id) => {
   return [tableau];
 }
 
+/**
+ * Function to Card data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getCardAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}`)
 

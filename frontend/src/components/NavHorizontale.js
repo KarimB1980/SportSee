@@ -6,7 +6,7 @@ import './style/NavHorizontale.css'
 const NavHorizontale = () => {
   return (
     <nav id="navigation">
-      <Link to={`/`}><img id='logo' src={logo} alt="logo" /></Link>
+      <Link to="/"><img id='logo' src={logo} alt="logo" /></Link>
       <Link to="/" className='accueil'>Accueil</Link>
       <Link to="/" className='profil'>Profil</Link>
       <Link to="/" className='reglage'>Réglage</Link>

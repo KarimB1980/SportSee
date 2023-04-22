@@ -30,7 +30,6 @@ const Objectifs = ({userAverageSessions}) => {
         </Container>
       );
     }
-    return null
   }
   ObjectifsToolType.propTypes = {
     active: PropTypes.bool,

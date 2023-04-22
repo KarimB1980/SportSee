@@ -2,7 +2,7 @@ import React , {useEffect, useState} from 'react'
 import NavHorizontale from '../components/NavHorizontale'
 import NavVerticale from '../components/NavVerticale'
 import './style/User.css'
-import './style/Ecran.css'
+import './style/Screen.css'
 
 import Header from '../components/Header'
 import Objectifs from '../components/Objectifs'

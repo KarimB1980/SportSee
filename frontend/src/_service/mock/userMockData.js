@@ -1,5 +1,10 @@
-import {USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE} from  '../dataMock'
+import {USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE} from  './dataMock'
 
+/**
+ * Function to User data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getUserMockData = async (id) => {
 
   let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
@@ -19,6 +24,11 @@ let getUserMockData = async (id) => {
   return tableau
 }
 
+/**
+ * Function to Activity data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getActivityMockData = async (id) => {
   let brut = USER_ACTIVITY.filter(activity => activity.userId === id)[0]
 
@@ -61,6 +71,11 @@ let getActivityMockData = async (id) => {
   return [tableau1, tableau2, tableau3, tableau4, tableau5, tableau6, tableau7];
 }
 
+/**
+ * Function to AverageSessions data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getAverageSessionsMockData = async (id) => {
   let brut = USER_AVERAGE_SESSIONS.filter(average => average.userId === id)[0]
 
@@ -75,6 +90,11 @@ let getAverageSessionsMockData = async (id) => {
   return [objetMock1,objetMock2,objetMock3,objetMock4,objetMock5,objetMock6,objetMock7];
 }
 
+/**
+ * Function to Radar data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getRadarDashboardMockData = async (id) => {
   let brut = USER_PERFORMANCE.filter(performance => performance.userId === id)[0]
 
@@ -88,6 +108,11 @@ let getRadarDashboardMockData = async (id) => {
   return [objet1,objet2,objet3,objet4,objet5,objet6];
 }
 
+/**
+ * Function to KPI data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getKPIMockData = async (id) => {
   let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
 
@@ -96,6 +121,11 @@ let getKPIMockData = async (id) => {
   return [tableau];
 }
 
+/**
+ * Function to Card data from user
+ * @param {string} id 
+ * @returns array
+ */
 let getCardMockData = async (id) => {
   let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
 

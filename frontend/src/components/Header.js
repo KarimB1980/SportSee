@@ -1,7 +1,11 @@
 import React from 'react'
 import './style/Header.css'
+import PropTypes from 'prop-types'
 
 const Header = ({userData}) => {
+  Header.propTypes = {
+    userData: PropTypes.array
+  }
   return (
     <header>
       <div className='nameUser'>
