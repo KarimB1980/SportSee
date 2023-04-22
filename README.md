@@ -1,7 +1,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/generator/?plabel=Framework&slabel=React+18)](https://forthebadge.com)
+[![forthebadge](./framework-react-18.svg)](https://forthebadge.com)
 ## Available Scripts
 
 In the directory "frontend", you can run :
