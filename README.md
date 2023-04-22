@@ -8,7 +8,7 @@
 Before start the project, you must install the dependencies in the directory "frontend" with :
 
 ### `cd frontend`
-### `npm intall`
+### `npm install`
 
 Next in the directory "frontend", you can run :
 
