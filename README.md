@@ -32,7 +32,7 @@ to start the backend.
 Runs the frontend in the development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
-You can open :
+You can open : \
 [http://localhost:3000/user/12](http://localhost:3000/user/12) to view user Karl informations in your browser. \
 [http://localhost:3000/user/12/activity](http://localhost:3000/user/12/activity) to view user Karl activity informations in your browser. \
 [http://localhost:3000/user/12/average-sessions](http://localhost:3000/user/12/average-sessions) to view user Karl average sessions informations in your browser. \
