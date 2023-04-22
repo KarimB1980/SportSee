@@ -32,8 +32,6 @@ to start the backend.
 Runs the frontend in the development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 Open [http://localhost:3000/user/12](http://localhost:3000/user/12) to view user Karl informations in your browser. \
 Open [http://localhost:3000/user/12/activity](http://localhost:3000/user/12/activity) to view user Karl activity informations in your browser. \
