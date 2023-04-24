@@ -36,7 +36,6 @@
 #cards {
   display: flex;
   flex-direction: column;
-  /*height: 615px;*/
   justify-content: space-between;
   margin-left: 31px;
 }

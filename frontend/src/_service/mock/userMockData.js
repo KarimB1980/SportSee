@@ -3,7 +3,7 @@ import {USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE} 
 /**
  * Function to User data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [id:number, firstName:string, lastName:string, age:number, todayScore:number, calorieCount:number, proteinCount:number, carbohydrateCount:number, lipidCount:number]
  */
 let getUserMockData = async (id) => {
 
@@ -27,7 +27,7 @@ let getUserMockData = async (id) => {
 /**
  * Function to Activity data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number]]
  */
 let getActivityMockData = async (id) => {
   let brut = USER_ACTIVITY.filter(activity => activity.userId === id)[0]
@@ -74,7 +74,7 @@ let getActivityMockData = async (id) => {
 /**
  * Function to AverageSessions data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [{day:'L',sessionLength:number},{day:'M',sessionLength:number},{day:'M',sessionLength:number},{day:'J',sessionLength:number},{day:'V',sessionLength:number},{day:'S',sessionLength:number},{day:'D',sessionLength:number}]
  */
 let getAverageSessionsMockData = async (id) => {
   let brut = USER_AVERAGE_SESSIONS.filter(average => average.userId === id)[0]
@@ -93,7 +93,7 @@ let getAverageSessionsMockData = async (id) => {
 /**
  * Function to Radar data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [{kind:'Intensité',value:number},{kind:'Vitesse',value:number},{kind:'Force',value:number},{kind:'Endurance',value:number},{kind:'Energie',value:number},{kind:'Cardio',value:number}]
  */
 let getRadarDashboardMockData = async (id) => {
   let brut = USER_PERFORMANCE.filter(performance => performance.userId === id)[0]
@@ -111,7 +111,7 @@ let getRadarDashboardMockData = async (id) => {
 /**
  * Function to KPI data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [todayScore:number]
  */
 let getKPIMockData = async (id) => {
   let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]
@@ -124,7 +124,7 @@ let getKPIMockData = async (id) => {
 /**
  * Function to Card data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [keyData:{calorieCount:number,proteinCount:number,carbohydrateCount:number,lipidCount:number}]
  */
 let getCardMockData = async (id) => {
   let brut = USER_MAIN_DATA.filter(user => user.id === id)[0]

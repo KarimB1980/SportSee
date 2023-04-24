@@ -7,7 +7,7 @@ const Axios = axios.create({
 /**
  * Function to User data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [id:number, firstName:string, lastName:string, age:number, todayScore:number, calorieCount:number, proteinCount:number, carbohydrateCount:number, lipidCount:number]
  */
 let getUserAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}`)
@@ -30,7 +30,7 @@ let getUserAPIData = async (id) => {
 /**
  * Function to Activity data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number],[day:string, kilogram:number, calorie:number]]
  */
 let getActivityAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}/activity`)
@@ -77,7 +77,7 @@ let getActivityAPIData = async (id) => {
 /**
  * Function to AverageSessions data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [{day:'L',sessionLength:number},{day:'M',sessionLength:number},{day:'M',sessionLength:number},{day:'J',sessionLength:number},{day:'V',sessionLength:number},{day:'S',sessionLength:number},{day:'D',sessionLength:number}]
  */
 let getAverageSessionsAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}/average-sessions`)
@@ -96,7 +96,7 @@ let getAverageSessionsAPIData = async (id) => {
 /**
  * Function to Radar data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [{kind:'Intensité',value:number},{kind:'Vitesse',value:number},{kind:'Force',value:number},{kind:'Endurance',value:number},{kind:'Energie',value:number},{kind:'Cardio',value:number}]
  */
 let getRadarDashboardAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}/performance`)
@@ -114,7 +114,7 @@ let getRadarDashboardAPIData = async (id) => {
 /**
  * Function to KPI data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [todayScore:number]
  */
 let getKPIAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}`)
@@ -127,7 +127,7 @@ let getKPIAPIData = async (id) => {
 /**
  * Function to Card data from user
  * @param {string} id 
- * @returns array
+ * @returns {array} [keyData:{calorieCount:number,proteinCount:number,carbohydrateCount:number,lipidCount:number}]
  */
 let getCardAPIData = async (id) => {
   let brut = await Axios.get(`user/${id}`)
