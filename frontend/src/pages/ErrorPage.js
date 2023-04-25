@@ -2,7 +2,7 @@ import React from 'react'
 import './style/ErrorPage.css'
 import { Link } from 'react-router-dom'
 
-// Création de la page d'erreur
+// Creation of the error page
 const ErrorPage = () => {
   return (
     <div id="page-erreur-404">

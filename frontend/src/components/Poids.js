@@ -61,7 +61,6 @@ margin-top:7px;
 `
 
 const Poids = ({userActivity}) => {
-  // Info-bulle
   function ActivityToolType({active, payload}) {
     if (active){
     return (

@@ -19,6 +19,7 @@ import protein from '../assets/icones/protein-icon.png'
 import getAllData from '../_service/callerService'
 import { useParams } from 'react-router-dom'
 
+// Creation of the user page
 const AffichageDonneesUser = () => {
 
   const [user, setUser] = useState([])

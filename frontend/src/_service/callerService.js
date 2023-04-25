@@ -2,8 +2,8 @@ import { getUserMockData, getActivityMockData, getAverageSessionsMockData, getRa
 import { getUserAPIData, getActivityAPIData, getAverageSessionsAPIData, getRadarDashboardAPIData, getKPIAPIData, getCardAPIData } from "./API/userApiData"
 
 /**
- * Si mock donc fichier json
- * Si API url API
+ * If mock then file dataMock.js
+ * If API then url API
  */
 
 let mock =  localStorage.getItem('mock')
