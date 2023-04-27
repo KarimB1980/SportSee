@@ -3,9 +3,6 @@ import './style/KPI.css'
 import PropTypes from 'prop-types'
 
 const KPI = ({userKPI}) => {
-  KPI.propTypes = {
-    userKPI: PropTypes.array
-  }
   return (
     <>
       <div className="contenairKPI">
@@ -49,6 +46,10 @@ const KPI = ({userKPI}) => {
       </div>
     </>  
   )  
+}
+
+KPI.propTypes = {
+  userKPI: PropTypes.array
 }
 
 export default KPI

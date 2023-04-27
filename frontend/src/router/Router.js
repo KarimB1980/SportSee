@@ -4,7 +4,7 @@ import Home from '../pages/Home'
 import User from '../pages/User'
 import ErrorPage from '../pages/ErrorPage'
 
-// Création du router
+// Creation of router
 const Router = () => {
   return (
     <Routes>

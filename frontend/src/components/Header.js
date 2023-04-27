@@ -3,9 +3,6 @@ import './style/Header.css'
 import PropTypes from 'prop-types'
 
 const Header = ({userData}) => {
-  Header.propTypes = {
-    userData: PropTypes.array
-  }
   return (
     <header>
       <div className='nameUser'>
@@ -17,6 +14,10 @@ const Header = ({userData}) => {
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  userData: PropTypes.array
 }
 
 export default Header

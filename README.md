@@ -1,4 +1,5 @@
 [![forthebadge](./frontend/public/framework-react-18.svg)](https://forthebadge.com)
+[![forthebadge](./frontend/public/node-js-v18.16.0.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
@@ -32,7 +33,8 @@ to start the backend.
 Runs the frontend in the development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
-You can open : \
+## API information
+You can use : \
 [http://localhost:3000/user/12](http://localhost:3000/user/12) to view user Karl informations in your browser. \
 [http://localhost:3000/user/12/activity](http://localhost:3000/user/12/activity) to view user Karl activity informations in your browser. \
 [http://localhost:3000/user/12/average-sessions](http://localhost:3000/user/12/average-sessions) to view user Karl average sessions informations in your browser. \
